@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pour ma Tortue ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+    }
+    .popup {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .btn {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .yes {
+      background-color: #4caf50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup">
+    <h1>Tu m'aimes ?</h1>
+    <div class="buttons">
+      <button class="btn yes" onclick="showLove()">Oui</button>
+      <button class="btn no" onmouseover="moveNo()">Non</button>
+    </div>
+  </div>
+
+  <script>
+    const noButton = document.querySelector('.no');
+    function moveNo() {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    }
+
+    function showLove() {
+      document.body.innerHTML = `
+        <div style="text-align:center; font-size:24px; margin-top:20%;">
+          <h1>Moi aussi, ma tortue 🐢❤️ !</h1>
+          <p>Tu es la meilleure, je t'aime fort !</p>
+          <div style="font-size:100px;">😍❤️😘</div>
+        </div>`;
+    }
+  </script>
+</body>
+</html>
